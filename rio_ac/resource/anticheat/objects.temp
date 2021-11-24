@@ -1,0 +1,56 @@
+
+AddEventHandler("entityCreating",  function(entity)
+    local owner = GetEntityOwner(entity)
+    local model = IsLegal(entity)
+    if (model) then 
+        if (owner ~= nil and owner > 0) then
+            local id = owner
+            local playerId = tostring(id)
+            local name = GetPlayerName(id)
+            local ids = ExtractIdentifiers(id)
+            local steam = ids.steam:gsub("steam:", "")
+            local steamDec = tostring(tonumber(steam,16))
+            steam = "https://steamcommunity.com/profiles/" .. steamDec
+            local gameLicense = ids.license
+            local discord = ids.discord
+            local reason = "Our anticheat caught you creating a blacklisted entity ["..tostring(model).."]. You have been kicked."
+            sendToDisc("HACKER (Probably) [via Blacklisted Entity]: _[" .. playerId .. "] " .. name .. "_ has spawned something...", 
+                'Steam: **' .. steam .. '**\n' ..
+                'GameLicense: **' .. gameLicense .. '**\n' ..
+                'Discord Tag: **<@' .. discord:gsub('discord:', '') .. '>**\n' ..
+                'Discord UID: **' .. discord:gsub('discord:', '') .. '**\n'
+                .. 'Blacklisted Item: **' .. tostring(model) .. "**")
+            DropPlayer(owner, reason)
+        end
+        CancelEvent()
+    end
+end)
+
+function GetEntityOwner(entity)
+    if (not DoesEntityExist(entity)) then 
+        return nil 
+    end
+    local owner = NetworkGetEntityOwner(entity)
+    if (GetEntityPopulationType(entity) ~= 7) then return nil end
+    return owner
+end
+
+
+function IsLegal(entity) 
+    local model = GetEntityModel(entity)
+    if model ~= nil then
+        for i=1, #Config.WhitelistModels do
+            local hashkey = tonumber(Config.WhitelistModels[i]) ~= nil and tonumber(Config.WhitelistModels[i]) or GetHashKey(Config.WhitelistModels[i]) 
+            if hashkey ~= model then
+                if (GetEntityPopulationType(entity) ~= 7) then
+                    return Config.WhitelistModels[i]
+                else
+                    return false 
+                end
+            end
+        end
+    end
+    return false
+end
+
+

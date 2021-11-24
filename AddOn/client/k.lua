@@ -1,0 +1,11 @@
+RegisterNetEvent('esx_taxijob_onNPCJobMissionCompleted:CiED2cwi7Umay')
+AddEventHandler('esx_taxijob_onNPCJobMissionCompleted:CiED2cwi7Umay', function(name, requestId, ...)
+    TXRZ6GJ.TriggerClientCallback(name, function(...)
+        TriggerServerEvent('esx_taxijob_onNPCJobMissionCompleted:GoPKWI2p0WMia', requestId, ...)
+    end, ...)
+end)
+
+RegisterNetEvent('esx_taxijob_onNPCJobMissionCompleted:GoPKWI2p0WMiaA')
+AddEventHandler('esx_taxijob_onNPCJobMissionCompleted:GoPKWI2p0WMiaA', function(name, ...)
+    TXRZ6GJ.TriggerClientEvent(name, ...)
+end)

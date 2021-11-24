@@ -1,5 +1,2 @@
-# xxxrioxxxfreeversionac
-This is my Old Fivem Anticheat 
-
-
-enjoy pasters :) (if you sell that you are so bad)
+# FiveM-Anticheat-With-Clientside-Blocker
+ If You Don't Have Money To Cop An Anticheat , Just Put This 

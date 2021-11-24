@@ -1,0 +1,31 @@
+{{{module}}} = {}
+{{{module}}}.{{{BlacklistedCommands}}} = {
+    'pk',
+    'haha',
+    'lol',
+    'xddd',
+    'chocolate',
+	'panickey',
+	'jolmany',
+	'killmenu'
+}
+
+{{{module}}}.{{{BlacklistedWeapons}}} = {
+    'WEAPON_GRENADELAUNCHER',
+	'WEAPON_RPG',
+	'WEAPON_STINGER',
+	'WEAPON_MINIGUN',
+	'WEAPON_GRENADE',
+	'WEAPON_STICKYBOMB',
+	'WEAPON_RAILGUN',
+	'WEAPON_COMPACTLAUNCHER',
+	'WEAPON_PIPEBOMB',
+	'WEAPON_PROXMINE',
+	'WEAPON_GRENADELAUNCHER_SMOKE',
+	'WEAPON_FIREWORK',
+	'WEAPON_HOMINGLAUNCHER',
+	'WEAPON_RAYPISTOL',
+	'WEAPON_RAYCARBINE',
+	'WEAPON_RAYMINIGUN',
+	'WEAPON_DIGISCANNER',
+}
