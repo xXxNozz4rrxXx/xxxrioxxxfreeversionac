@@ -1,2 +1,3 @@
-# FiveM-Anticheat-With-Clientside-Blocker
- If You Don't Have Money To Cop An Anticheat , Just Put This 
+# RioAntiCheat Free Version
+
+Do not Sell it , if you do you are a skid a simple copypaster and you will get exposed 
